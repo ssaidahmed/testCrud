@@ -146,7 +146,8 @@
 
 
                 $("#list").trigger("reloadGrid", { fromServer: true, page: 1 });
-
+//                $("#userName").for
+                $('input, select').styler();
 
             });
 
@@ -164,6 +165,11 @@
 
         function getValue() {
             var textSearch = document.getElementById("userName").value;
+
+            if(!/^[a-zA-Z0-9]+$/.test(textSearch)){
+                alert("Введите имя" );
+                return;
+            }
             document.location.href ="/search/" + textSearch;
         }
     </script>
